@@ -33,5 +33,30 @@ class Bike(object):
         self.miles -= 5
         return self
 
-my_bike = Bike(100,10)
-my_bike.displayinfo().ride().ride().reverse().ride()
+# my_bike = Bike(100,10)
+# my_bike.displayinfo().ride().ride().reverse().ride()
+
+class Car(object):
+    def __init__(self,price,speed,fuel,mileage):
+        self.price = price
+        self.speed = speed
+        self.fuel = fuel
+        self.mileage = mileage
+        if price > 10000:
+            self.tax = 0.15
+        else:
+            self.tax = 0.12
+
+    def display_all(self):
+        """
+        Prints attributes to console, return self
+        """
+        print("Price: " + str(self.price))
+        print("Speed: " + str(self.speed) + "mph")
+        print("Fuel: " + self.fuel)
+        print("Mileage: " + str(self.mileage) + "mpg")
+        print("Tax: " + str(self.tax))
+        return self
+
+car1 = Car(20000,35,"Full",105)
+car1.display_all()
